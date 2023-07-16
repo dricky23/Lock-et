@@ -162,23 +162,6 @@ createUserWithEmailAndPassword(auth, email, password,)
       clearInputFieldEl()
     })
     
-    onValue(ref(database, `users/${user.uid}/comments`), function(snapshot) {
-      if (snapshot.exists()) {
-          let itemsArray = Object.entries(snapshot.val())
-      
-          clearMsgEl()
-          
-          for (let i = 0; i < itemsArray.length; i++) {
-              let currentItem = itemsArray[i]
-              let currentItemID = currentItem[0]
-              let currentItemValue = currentItem[1]
-              
-              appendItemToMsgEl(currentItem)
-          }    
-      } else {
-          MsgEl.innerHTML = "No items here... yet"
-      }
-    })
     
     function clearMsgEl() {
       MsgEl.innerHTML = ""
