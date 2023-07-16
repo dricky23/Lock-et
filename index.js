@@ -171,22 +171,7 @@ createUserWithEmailAndPassword(auth, email, password,)
       inputFieldEl.value = ""
     }
     
-    function appendItemToMsgEl(item) {
-      let itemID = item[0]
-      let itemValue = item[1]
-      
-      let newEl = document.createElement("li")
-      
-      newEl.textContent = itemValue
-      
-      newEl.addEventListener("dblclick", function() {
-          let exactLocationOfItemInDB = ref(database, `users/${user.uid}/comments`)
-          
-          remove(exactLocationOfItemInDB)
-      })
-      
-      MsgEl.append(newEl)
-    };
+    
     // ...
   } else {
     // User is signed out
