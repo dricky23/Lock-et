@@ -114,5 +114,7 @@ ul li:hover {
 
 #spc {
     background-image: url(eyes.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }
