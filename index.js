@@ -15,7 +15,7 @@
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
   const auth = getAuth();
-  let MsgInDB = ref(database, "Msg");
+  
  
 
 
@@ -77,7 +77,7 @@ createUserWithEmailAndPassword(auth, email, password,)
  const user = auth.currentUser;
  onAuthStateChanged(auth, (user) => {
   if (user) {
-    push(ref(database, `users/${user.uid}/comments`), "test comment",)
+    
 
     const uid = user.uid;
     var topB = document.getElementById("sign-up-d");
@@ -114,8 +114,8 @@ createUserWithEmailAndPassword(auth, email, password,)
     const MsgEl = document.getElementById("shopping-list")
     const freeEx = document.getElementById("free-h")
     const shoppingListEl = document.getElementById("free-c")
-
-    onValue(ref(database, "Coupon"), function(snapshot) {
+   // push(ref(database, `users/${user.uid}/comments`), "test comment",)//
+    onValue(ref(database, `users/${user.uid}/comments`), function(snapshot) {
         if (snapshot.exists()) {
             let itemsArray = Object.entries(snapshot.val())
         
@@ -146,7 +146,7 @@ createUserWithEmailAndPassword(auth, email, password,)
         newEl.textContent = itemValue
         
         newEl.addEventListener("dblclick", function() {
-            let exactLocationOfItemInDB = ref(database, `Coupon/${itemID}`)
+            let exactLocationOfItemInDB = ref(database, `users/${user.uid}/comments`)
             
             remove(exactLocationOfItemInDB)
         })
@@ -157,12 +157,12 @@ createUserWithEmailAndPassword(auth, email, password,)
     addButtonEl.addEventListener("click", function() {
       let inputValue = inputFieldEl.value
       
-      push(MsgInDB, inputValue)
+      push(ref(database, `users/${user.uid}/comments`), inputValue)
       
       clearInputFieldEl()
     })
     
-    onValue(MsgInDB, function(snapshot) {
+    onValue(ref(database, `users/${user.uid}/comments`), function(snapshot) {
       if (snapshot.exists()) {
           let itemsArray = Object.entries(snapshot.val())
       
@@ -197,7 +197,7 @@ createUserWithEmailAndPassword(auth, email, password,)
       newEl.textContent = itemValue
       
       newEl.addEventListener("dblclick", function() {
-          let exactLocationOfItemInDB = ref(database, `Msg/${itemID}`)
+          let exactLocationOfItemInDB = ref(database, `users/${user.uid}/comments`)
           
           remove(exactLocationOfItemInDB)
       })
