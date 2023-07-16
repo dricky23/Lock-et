@@ -80,7 +80,7 @@ ul {
 ul li {
     font-size: 20px;
     color: #0e0a27;
-    background-color: #bcff14;
+    background-color: #14f7ff;
     padding: 15px;
     border-radius: 8px;
     flex-grow: 1;
@@ -114,5 +114,5 @@ ul li:hover {
 
 #spc {
     background-image: url(eyes.gif);
-    background: radial-gradient(#6cffdf, #05cea6);
+    
 }
