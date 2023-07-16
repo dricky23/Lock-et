@@ -88,7 +88,7 @@ createUserWithEmailAndPassword(auth, email, password,)
     midB.innerHTML = 
     `<p id="imgh"></p>
     <input type="text" id="input-field" placeholder="Say something here!">
-    <button id="add-button">Add Message</button>
+    <button id="add-button">Add Note</button>
     <ul id="shopping-list">
     </ul>`;
     topB.innerHTML = `
@@ -97,7 +97,7 @@ createUserWithEmailAndPassword(auth, email, password,)
       signOut(auth).then(() => {
     
       // Sign-out successful.
-      alert("BYEEEEE");
+      alert("User signed out!");
       window.location.reload();
     }).catch((error) => {
       // An error happened.
@@ -129,7 +129,8 @@ createUserWithEmailAndPassword(auth, email, password,)
                 appendItemToShoppingListEl(currentItem)
             }    
         } else {
-            shoppingListEl.innerHTML = "locked notes!"
+          freeEx.innerText = "Empty📪"  
+          shoppingListEl.innerHTML = ""
         }
     })
 
