@@ -1,7 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: radial-gradient(#00c555,#01974f );
+    background: radial-gradient(#00ABB1,#007276 );
     color: #dad4f9;
     user-select: none;
     font-family: cursive;
@@ -38,7 +38,7 @@ h2 {
     font-weight: bolder;
 }
 .log-btn {
-    background-color: #05cc6f ;
+    background-color: #36D8DD ;
     color: #dad4f9;
     margin-top: 6.5px;
     margin-bottom: 6.5px;
@@ -87,6 +87,9 @@ ul li {
     text-align: center;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
 }
+li {
+    border: black 2px solid;
+}
 ul li:hover {
     background-color: #F9879E;
     cursor: pointer;
@@ -95,7 +98,7 @@ ul li:hover {
     margin-bottom: 8px;
 }
 .log-btn:hover {
-
+    background-color: #079ca1;
     cursor: pointer;
 
 }
