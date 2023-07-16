@@ -77,7 +77,7 @@ createUserWithEmailAndPassword(auth, email, password,)
  const user = auth.currentUser;
  onAuthStateChanged(auth, (user) => {
   if (user) {
-    push(ref(database, `users/${user}`),{
+    push(ref(database, `users/${user.currentUser}`),{
       comments: "test comment",
       
     })
