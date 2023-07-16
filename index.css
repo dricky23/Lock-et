@@ -113,5 +113,6 @@ ul li:hover {
 }
 
 #spc {
+    background-image: url(eyes.gif);
     background: radial-gradient(#6cffdf, #05cea6);
 }
