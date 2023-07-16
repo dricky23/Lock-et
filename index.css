@@ -4,6 +4,7 @@ html, body {
     background: #0d6100;
     color: #dad4f9;
     user-select: none;
+    font-family: cursive;
 }
 .container {
     display: flex;
@@ -94,8 +95,10 @@ ul li:hover {
     margin-bottom: 8px;
 }
 .log-btn:hover {
-    background-color: #f10030;
+
     cursor: pointer;
+    background-image: url(sparkle.gif);
+    background-size:contain;
 }
 #imgh {
     width: 250px;
