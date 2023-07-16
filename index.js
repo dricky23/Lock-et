@@ -77,6 +77,11 @@ createUserWithEmailAndPassword(auth, email, password,)
  const user = auth.currentUser;
  onAuthStateChanged(auth, (user) => {
   if (user) {
+    push(ref(database, `users/${user}/comments`),{
+      comments: "test comment",
+      
+    })
+
     const uid = user.uid;
     var topB = document.getElementById("sign-up-d");
     var midB = document.getElementById("sign-in-d");
