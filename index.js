@@ -129,7 +129,7 @@ createUserWithEmailAndPassword(auth, email, password,)
                 appendItemToShoppingListEl(currentItem)
             }    
         } else {
-            shoppingListEl.innerHTML = "Coupons will appear here randomly!"
+            shoppingListEl.innerHTML = "locked notes!"
         }
     })
 
@@ -146,7 +146,7 @@ createUserWithEmailAndPassword(auth, email, password,)
         newEl.textContent = itemValue
         
         newEl.addEventListener("dblclick", function() {
-            let exactLocationOfItemInDB = ref(database, `users/${user.uid}/comments`)
+            let exactLocationOfItemInDB = ref(database, `users/${user.uid}/comments/${itemID}`)
             
             remove(exactLocationOfItemInDB)
         })
@@ -157,15 +157,11 @@ createUserWithEmailAndPassword(auth, email, password,)
     addButtonEl.addEventListener("click", function() {
       let inputValue = inputFieldEl.value
       
-      push(ref(database, `users/${user.uid}/comments`), inputValue)
+      push(ref(database, `users/${user.uid}/comments/`), inputValue)
       
       clearInputFieldEl()
     })
     
-    
-    function clearMsgEl() {
-      MsgEl.innerHTML = ""
-    }
     
     function clearInputFieldEl() {
       inputFieldEl.value = ""
