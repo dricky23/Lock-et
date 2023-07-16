@@ -125,7 +125,7 @@ createUserWithEmailAndPassword(auth, email, password,)
                 let currentItem = itemsArray[i]
                 let currentItemID = currentItem[0]
                 let currentItemValue = currentItem[1]
-                freeEx.innerText = "Double click to use coupons!"
+                freeEx.innerText = "See all your notes here!"
                 appendItemToShoppingListEl(currentItem)
             }    
         } else {
